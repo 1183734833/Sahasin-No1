@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kgc.forum.mapper.InvitationMapper">
+
+	<select id="queryInvitationTotalCount" resultType="java.lang.Integer">
+			select count(1) from invitation
+		<where>
+			<if test="searchInfo != null and searchInfo != ''">
+				title like concat("%",#{searchInfo},"%")
+			</if>
+		</where>
+	</select>
+
+	<select id="queryInvitationByTitleAndPage" resultType="com.kgc.forum.beans.Invitation">
+		select  id,title,summary,author,createdate from invitation
+		<where>
+			<if test="searchInfo != null and searchInfo != ''">
+				title like concat("%",#{searchInfo},"%")
+			</if>
+		</where>
+		ORDER BY createdate DESC LIMIT #{pageIndex}, #{pageSize}
+	</select>
+
+	<delete id="delete">
+			delete from invitation where id = #{id}
+	</delete>
+</mapper>

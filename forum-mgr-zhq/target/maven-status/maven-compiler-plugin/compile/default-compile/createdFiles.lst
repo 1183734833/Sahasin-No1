@@ -1,0 +1,9 @@
+com\kgc\forum\beans\Invitation.class
+com\kgc\forum\mapper\ReplyMapper.class
+com\kgc\forum\mapper\InvitationMapper.class
+com\kgc\forum\service\Impl\ReplyServiceImpl.class
+com\kgc\forum\beans\Reply.class
+com\kgc\forum\service\InvitationService.class
+com\kgc\forum\service\ReplyService.class
+com\kgc\forum\controller\InvitationController.class
+com\kgc\forum\service\Impl\InvitationServiceImpl.class
